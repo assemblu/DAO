@@ -104,4 +104,23 @@ public class DBmanager
             }
         }
     }
+
+    public void close()
+    {
+        try
+        {
+            connection.close();
+            uniqueInstance = null;
+            connection = null;
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public Connection getConnection()
+    {
+        return connection;
+    }
 }
