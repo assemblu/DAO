@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42acd532-e409-4249-9c40-8f2c62f598f4" name="Default Changelist" comment="" />
+    <list default="true" id="18a8d471-9012-4877-aa55-82681e685078" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1ReUsca7J9WM9SkvfrOKTvbcoka" />
+  <component name="ProjectId" id="1RgNTqzULtQCFbev2uzBzw1N5Fm" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -39,11 +34,11 @@
   </component>
   <component name="RunManager">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="db5.App" />
-      <module name="db5" />
+      <option name="MAIN_CLASS_NAME" value="DAO.App" />
+      <module name="DAO" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="db5.*" />
+          <option name="PATTERN" value="DAO.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -62,17 +57,27 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="42acd532-e409-4249-9c40-8f2c62f598f4" name="Default Changelist" comment="" />
-      <created>1570027263105</created>
+      <changelist id="18a8d471-9012-4877-aa55-82681e685078" name="Default Changelist" comment="" />
+      <created>1570084789342</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1570027263105</updated>
-      <workItem from="1570027270468" duration="2564000" />
-      <workItem from="1570032036007" duration="1749000" />
+      <updated>1570084789342</updated>
+      <workItem from="1570084792785" duration="2164000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
