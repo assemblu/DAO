@@ -2,6 +2,7 @@ package DAO;
 
 import static org.junit.Assert.assertTrue;
 
+import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -44,6 +45,66 @@ public class AppTest
         for(String data : output)
         {
             if(data.substring(0,2).equals("En"))
+            {
+                correctCounter++;
+            }
+        }
+
+        assertTrue(output.size() == correctCounter);
+    }
+
+    @Test
+    public void testInputEN()
+    {
+        ArrayList<String> output = new ArrayList<String>();
+        DatabaseManager dbm = new DatabaseManager();
+        CityDAO cityDAO = new CityDAO(dbm);
+        cityDAO.setupCityDB();
+
+        Scanner input = new Scanner(System.in);
+        // skip asking for input
+        ByteArrayInputStream inquery = new ByteArrayInputStream("En".getBytes());
+        cityDAO.searchCity(inquery.toString());
+
+        while(dbm.resultNext())
+        {
+            output.add(dbm.getResultString("Name"));
+        }
+
+        int correctCounter = 0;
+        for(String data : output)
+        {
+            if(data.substring(0,2).equals("En"))
+            {
+                correctCounter++;
+            }
+        }
+
+        assertTrue(output.size() == correctCounter);
+    }
+
+    @Test
+    public void testInputX()
+    {
+        ArrayList<String> output = new ArrayList<String>();
+        DatabaseManager dbm = new DatabaseManager();
+        CityDAO cityDAO = new CityDAO(dbm);
+        cityDAO.setupCityDB();
+
+        Scanner input = new Scanner(System.in);
+        // skip asking for input
+        ByteArrayInputStream inquery = new ByteArrayInputStream("X".getBytes());
+        cityDAO.searchCity(inquery.toString());
+
+        while(dbm.resultNext())
+        {
+            output.add(dbm.getResultString("Name"));
+        }
+
+        int correctCounter = 0;
+        for(String data : output)
+        {
+            if(data.substring(0,1).equals("X"))
             {
                 correctCounter++;
             }
