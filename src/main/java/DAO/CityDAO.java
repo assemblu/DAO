@@ -1,17 +1,23 @@
 package DAO;
 
+import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
+
 import javax.xml.transform.Result;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CityDAO implements dbmInterface
 {
     DatabaseManager dbm;
     ResultSet resultSet;
+    String query;
 
     CityDAO(DatabaseManager dbm)
     {
         this.dbm = dbm;
         this.resultSet = null;
+        this.query = null;
     }
 
     public void setupCityDB()
@@ -20,9 +26,24 @@ public class CityDAO implements dbmInterface
         dbm.setDatabase("world");
     }
 
+    public String getQuery()
+    {
+        Scanner input = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder();
+        String query = "";
+        while(input.hasNextLine() && ! (query = input.nextLine()).contains(";"))
+        {
+            sb.append(query + " ");
+        }
+        sb.append(query);
+
+        return sb.toString();
+    }
+
     @Override
     public void runQuery(String query)
     {
+        System.out.println(query);
         this.dbm.runQuery(query);
     }
 
@@ -45,23 +66,8 @@ public class CityDAO implements dbmInterface
         return null;
     }
 
-    public void selectFromCities(String query)
-    {
-        this.dbm.runQuery("SELECT " + query + " FROM city");
-    }
-
-    public void getCities()
-    {
-        this.dbm.runQuery("SELECT * FROM city;");
-    }
-
-    public void selectCitiesWhere(String query)
-    {
-        this.dbm.runQuery("SELECT * FROM city WHERE " + query);
-    }
-
     public void searchCity(String cityName)
     {
-        this.dbm.runQuery("SELECT Name FROM city WHERE Name LIKE '" + cityName + "%'");
+        this.dbm.runQuery("SELECT Name FROM city WHERE Name LIKE '" + cityName + "%';");
     }
 }
