@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
-public class DatabaseManager
+public class DatabaseManager implements dbmInterface
 {
     private Connection connection;
     private Properties properties;
@@ -15,10 +15,12 @@ public class DatabaseManager
 
     DatabaseManager()
     {
-        setupDBM();
+        this.connection = null;
+        this.properties = null;
+        this.resultSet = null;
     }
 
-    private void setupDBM()
+    public void setupDBM()
     {
         loadProperties();
         makeConnection();
@@ -53,6 +55,7 @@ public class DatabaseManager
         }
     }
 
+    @Override
     public void runQuery(String query)
     {
         try
@@ -66,6 +69,7 @@ public class DatabaseManager
         }
     }
 
+    @Override
     public boolean resultNext()
     {
         try
@@ -79,6 +83,7 @@ public class DatabaseManager
         return false;
     }
 
+    @Override
     public String getResultString(String columnLabel)
     {
         try
