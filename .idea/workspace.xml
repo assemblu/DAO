@@ -23,10 +23,11 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -93,6 +94,7 @@
       <workItem from="1570177745166" duration="5517000" />
       <workItem from="1570374533811" duration="657000" />
       <workItem from="1570530231538" duration="363000" />
+      <workItem from="1570730479283" duration="4827000" />
     </task>
     <servers />
   </component>

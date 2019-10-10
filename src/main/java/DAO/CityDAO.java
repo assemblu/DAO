@@ -5,8 +5,8 @@ import java.sql.ResultSet;
 
 public class CityDAO implements dbmInterface
 {
-    DatabaseManager dbm;
-    ResultSet resultSet;
+    private DatabaseManager dbm;
+    private ResultSet resultSet;
 
     CityDAO(DatabaseManager dbm)
     {
@@ -42,7 +42,15 @@ public class CityDAO implements dbmInterface
 
     @Override
     public String getResultString(String columnLabel) {
-        return null;
+        try
+        {
+            return this.resultSet.getString(columnLabel);
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        return "Error.";
     }
 
     public void selectFromCities(String query)
@@ -60,8 +68,19 @@ public class CityDAO implements dbmInterface
         this.dbm.runQuery("SELECT * FROM city WHERE " + query);
     }
 
-    public void searchCity(String cityName)
+    public void searchCity(String query)
     {
-        this.dbm.runQuery("SELECT Name FROM city WHERE Name LIKE '" + cityName + "%'");
+        String[] queryContent = query.split(" ");
+        if(queryContent.length == 2)
+        {
+            // user submitted country
+            this.dbm.runQuery("SELECT Name FROM city WHERE Name LIKE '" + queryContent[0] + "%' AND " +
+                    "CountryCode IN (SELECT Code FROM country WHERE Name LIKE '" + queryContent[1] + "%')");
+        }
+        else
+        {
+            // user only submitted city
+            this.dbm.runQuery("SELECT Name FROM city WHERE Name LIKE '" + queryContent[0] + "%'");
+        }
     }
 }
