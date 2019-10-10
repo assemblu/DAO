@@ -2,7 +2,6 @@ package DAO;
 
 import static org.junit.Assert.assertTrue;
 
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
@@ -111,5 +110,21 @@ public class AppTest
         }
 
         assertTrue(output.size() == correctCounter);
+    }
+
+    @Test
+    public void testTwoInputs()
+    {
+        String output = null;
+        DatabaseManager dbm = new DatabaseManager();
+        CityDAO cityDAO = new CityDAO(dbm);
+        cityDAO.setupCityDB();
+
+        cityDAO.searchCity("en net");
+        while(dbm.resultNext())
+        {
+            output = (dbm.getResultString("Name"));
+        }
+        assertTrue(output.equals("Enschede"));
     }
 }

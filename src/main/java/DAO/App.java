@@ -11,24 +11,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        /*
-        String url = "jdbc:mysql://localhost/world";
-        String username = "root";
-        String password = "12345";
-        String query  = "SELECT * FROM city";
-
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection connection = DriverManager.getConnection(url+"?useSSL=false&allowPublicKeyRetrieval=true", username, password);
-        Statement statement = connection.createStatement();
-        ResultSet resultSet = statement.executeQuery(query);
-
-        while(resultSet.next())
-        {
-            String name = resultSet.getString("Name");
-            System.out.println(name);
-        }
-        */
-
         try
         {
             DatabaseManager dbm = new DatabaseManager();
@@ -50,6 +32,5 @@ public class App
             System.err.println("MAIN LOOP: ");
             e.printStackTrace();
         }
-
     }
 }
