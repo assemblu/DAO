@@ -1,7 +1,11 @@
 package DAO;
 
+import com.sun.org.apache.bcel.internal.generic.ARRAYLENGTH;
+
 import javax.xml.transform.Result;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class CityDAO implements dbmInterface
 {
@@ -12,6 +16,7 @@ public class CityDAO implements dbmInterface
     {
         this.dbm = dbm;
         this.resultSet = null;
+        this.query = null;
     }
 
     public void setupCityDB()
@@ -20,9 +25,24 @@ public class CityDAO implements dbmInterface
         dbm.setDatabase("world");
     }
 
+    public String getQuery()
+    {
+        Scanner input = new Scanner(System.in);
+        StringBuilder sb = new StringBuilder();
+        String query = "";
+        while(input.hasNextLine() && ! (query = input.nextLine()).contains(";"))
+        {
+            sb.append(query + " ");
+        }
+        sb.append(query);
+
+        return sb.toString();
+    }
+
     @Override
     public void runQuery(String query)
     {
+        System.out.println(query);
         this.dbm.runQuery(query);
     }
 

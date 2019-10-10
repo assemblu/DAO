@@ -19,9 +19,8 @@ public class App
 
             Scanner input = new Scanner(System.in);
             System.out.print("Enter query: ");
-            String query = input.nextLine();
-
-            cityDAO.searchCity(query);
+            String query = cityDAO.getQuery();
+            cityDAO.runQuery(query);
 
             while(dbm.resultNext())
             {
