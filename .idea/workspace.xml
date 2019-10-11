@@ -70,9 +70,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppTest.testTwoInputs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DAO" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="DAO.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="DAO" />
+      <option name="MAIN_CLASS_NAME" value="DAO.AppTest" />
+      <option name="METHOD_NAME" value="testTwoInputs" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AppTest" />
+        <item itemvalue="JUnit.AppTest.testTwoInputs" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>
@@ -95,6 +112,8 @@
       <workItem from="1570374533811" duration="657000" />
       <workItem from="1570530231538" duration="363000" />
       <workItem from="1570730479283" duration="4827000" />
+      <workItem from="1570737275336" duration="703000" />
+      <workItem from="1570811721092" duration="1482000" />
     </task>
     <servers />
   </component>

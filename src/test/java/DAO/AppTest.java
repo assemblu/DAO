@@ -26,7 +26,8 @@ public class AppTest
     public void testCitiesSearchWithEN()
     {
         ArrayList<String> output = new ArrayList<String>();
-        DatabaseManager dbm = new DatabaseManager();
+        DatabaseManager dbm = DatabaseManager.getInstance();
+        dbm.setupDBM();
         CityDAO cityDAO = new CityDAO(dbm);
         cityDAO.setupCityDB();
 
@@ -56,7 +57,8 @@ public class AppTest
     public void testInputEN()
     {
         ArrayList<String> output = new ArrayList<String>();
-        DatabaseManager dbm = new DatabaseManager();
+        DatabaseManager dbm = DatabaseManager.getInstance();
+        dbm.setupDBM();
         CityDAO cityDAO = new CityDAO(dbm);
         cityDAO.setupCityDB();
 
@@ -86,7 +88,8 @@ public class AppTest
     public void testInputX()
     {
         ArrayList<String> output = new ArrayList<String>();
-        DatabaseManager dbm = new DatabaseManager();
+        DatabaseManager dbm = DatabaseManager.getInstance();
+        dbm.setupDBM();
         CityDAO cityDAO = new CityDAO(dbm);
         cityDAO.setupCityDB();
 
@@ -116,7 +119,8 @@ public class AppTest
     public void testTwoInputs()
     {
         String output = null;
-        DatabaseManager dbm = new DatabaseManager();
+        DatabaseManager dbm = DatabaseManager.getInstance();
+        dbm.setupDBM();
         CityDAO cityDAO = new CityDAO(dbm);
         cityDAO.setupCityDB();
 

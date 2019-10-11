@@ -1,23 +1,31 @@
 package DAO;
 
+import javax.xml.crypto.Data;
 import javax.xml.transform.Result;
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.Properties;
 
+// TODO
+// Make this class a singleton
 public class DatabaseManager implements dbmInterface
 {
+    static DatabaseManager dbm = new DatabaseManager();
     private Connection connection;
     private Properties properties;
     private ResultSet resultSet;
 
-
-    DatabaseManager()
+    private DatabaseManager()
     {
         this.connection = null;
         this.properties = null;
         this.resultSet = null;
+    }
+
+    public static DatabaseManager getInstance()
+    {
+        return dbm;
     }
 
     public void setupDBM()

@@ -13,7 +13,8 @@ public class App
     {
         try
         {
-            DatabaseManager dbm = new DatabaseManager();
+            DatabaseManager dbm = DatabaseManager.getInstance();
+            dbm.setupDBM();
             CityDAO cityDAO = new CityDAO(dbm);
             cityDAO.setupCityDB();
 

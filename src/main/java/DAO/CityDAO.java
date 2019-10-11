@@ -16,12 +16,10 @@ public class CityDAO implements dbmInterface
     {
         this.dbm = dbm;
         this.resultSet = null;
-        this.query = null;
     }
 
     public void setupCityDB()
     {
-        this.dbm.setupDBM();
         dbm.setDatabase("world");
     }
 
@@ -95,12 +93,12 @@ public class CityDAO implements dbmInterface
         {
             // user submitted country
             this.dbm.runQuery("SELECT Name FROM city WHERE Name LIKE '" + queryContent[0] + "%' AND " +
-                    "CountryCode IN (SELECT Code FROM country WHERE Name LIKE '" + queryContent[1] + "%')");
+                    "CountryCode IN (SELECT Code FROM country WHERE Name LIKE '" + queryContent[1] + "%');");
         }
         else
         {
             // user only submitted city
-            this.dbm.runQuery("SELECT Name FROM city WHERE Name LIKE '" + queryContent[0] + "%'");
+            this.dbm.runQuery("SELECT Name FROM city WHERE Name LIKE '" + queryContent[0] + "%';");
         }
     }
 }
